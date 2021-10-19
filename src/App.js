@@ -4,8 +4,9 @@ import Header from './child-components/Header/header';
 function App() {
   return (
     <div className="App">
-      <HomePage/>
       <Header/>
+      <HomePage/>
+      
     </div>
   );
 }
