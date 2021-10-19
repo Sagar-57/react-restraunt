@@ -1,0 +1,226 @@
+/* background color and position */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;  
+  overflow: hidden;
+}
+
+.bike-riding {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  background-color: #cfebe1;
+}
+
+.cyclist {
+  position: relative;
+  animation: ride 1s linear infinite;
+  top:20px;
+}
+
+@keyframes ride {
+  0% {transform: scaleY(1);}
+  25% {transform: scaleY(1.02);}
+  50% {transform: scaleY(1);}
+  75% {transform: scaleY(1.02);}
+  100% {transform: scaleY(1);}
+}
+
+
+/* bike style */
+
+.bike {
+  position: relative;
+  background-color: #4447cb;
+  width:180px;
+  height: 10px;
+  border-radius:10px;
+  box-shadow: inset 3px -3px rgba(0,0,0,0.1);
+}
+
+.bike:before, .bike:after {
+  content:"";
+  position: absolute;
+  background-color: #384ce5;
+  width:8px;
+  height: 140px;
+  top:-10px;
+}
+
+.bike:before {
+  transform: rotate(35deg);
+  left:126px;
+  box-shadow: -120px 85px #5b38e5, 0px -30px #4338e5;
+}
+
+.bike:after {
+  transform: rotate(-35deg);
+  left:49px;
+  box-shadow: 120px 85px #383de5, 0px -30px #3855e5;
+}
+
+.leftTyre, .rightTyre {
+  width:150px;
+  height:150px;
+  position: absolute;
+  border: 10px solid #333;
+  border-radius:50%;
+  z-index:1;
+  top:30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.leftTyre {
+  left:-140px;
+}
+
+.rightTyre {
+  left:155px;
+}
+
+.leftTyre:before, .rightTyre:before {
+  content:"";
+  position: absolute;
+  width:135px;
+  height:135px;
+  border-radius:50%;
+  border: 8px solid #35dde7;
+}
+
+.leftTyre:after, .rightTyre:after {
+  content:"";
+  position: absolute;
+  width:2px;
+  height: 145px;
+  left:75px;
+  top:0;
+  background-color: #fcfffc;
+}
+
+.spokes {
+  position: absolute;
+  width:145px;
+  height: 2px;
+  background-color: #fcfffc;
+  top:75px;
+}
+
+.spokes:before, .spokes:after {
+  content:"";
+  position: absolute;
+   width:145px;
+  height: 2px;
+  background-color: #fcfffc;  
+  left:3px;
+}
+
+.spokes:before {
+  transform: rotate(45deg);
+}
+
+.spokes:after {
+  transform: rotate(-45deg);
+}
+
+
+.wheel:before {
+  content:"";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius:100%;
+  border-top: 11px solid #333;
+  border-left: 8px solid #e53838;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid transparent;
+  transform: rotate(80deg);
+  top:-140px;
+  left:240.2px;
+}
+
+.shadow {
+  position: absolute;
+  width:520px;
+  height:15px;
+  background-color: rgba(0,0,0,0.2);
+  top:510px;
+  left:45px;
+  border-radius:10px;
+  animation: scale 2s linear infinite;
+}
+
+/* animating wheels and shadow  */
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+    
+}
+
+@keyframes scale {
+  0% {transform: scaleX(1);}
+  25% {transform: scaleX(0.9);}
+  50% {transform: scaleX(1);}
+  75% {transform: scaleX(0.9);}
+  100% {transform: scaleX(1);}
+}
+
+/* adding pedals and chain  */
+
+.pedals {
+  position: relative;
+  z-index:7;
+  width:50px;
+  height:50px;
+  border: 5px solid #ba181b; 
+  border-radius:50%;
+  top:85px;
+  left:60px;
+  animation: spin 1s linear infinite; 
+}
+
+.pedals:before {
+  content:"";
+  position: absolute;
+  border-radius: 10px;
+  background-color: #adb5bd;
+  height: 30px;
+  width:5px;
+  left:22px;
+  top:-5px;
+}
+
+.chain {
+  position: absolute;
+  top:81px;
+}
+
+.chain:before, .chain:after {
+  content:"";
+  position: absolute;
+  background-color: #333;
+  width:140px;
+  height:2px;
+  left:-60px;
+}
+
+.chain:before {
+  top:20px;
+  transform: rotate(-10deg);
+}
+
+.chain:after {
+  top:47px;
+  transform: rotate(10deg);
+}
+
